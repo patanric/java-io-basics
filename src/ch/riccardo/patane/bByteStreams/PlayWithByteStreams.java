@@ -60,6 +60,8 @@ public class PlayWithByteStreams {
     public static void main(String[] args) {
 
         String pathName = "files/ints.bin";
+
+        // Write to bin file:
         try (OutputStream os = new FileOutputStream(pathName);
              DataOutputStream dos = new DataOutputStream(os)) {
 
@@ -78,6 +80,7 @@ public class PlayWithByteStreams {
             e.printStackTrace();
         }
 
+        // Read from bin file:
         try (InputStream is = new FileInputStream(pathName);
              DataInputStream dis = new DataInputStream(is)) {
 
@@ -88,6 +91,7 @@ public class PlayWithByteStreams {
                 }
             } catch (EOFException ignored) {
             }
+
             System.out.println("Number of ints: "+list.size());
 
         } catch (IOException e) {

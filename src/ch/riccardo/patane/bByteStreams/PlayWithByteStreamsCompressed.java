@@ -17,11 +17,17 @@ import java.util.stream.IntStream;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
+/**
+ * With the GZIPOutputStream we can compress the current byte stream, but we cannot build a ZIP archive.
+ * See {@link PlayWithZipFiles} for a demo on how to build ZIP archives containing files and folders.
+ */
 public class PlayWithByteStreamsCompressed {
 
     public static void main(String[] args) {
 
         String pathName = "files/ints.bin.gz";
+
+        // Write to file:
         try (OutputStream os = new FileOutputStream(pathName);
              GZIPOutputStream gzos = new GZIPOutputStream(os);
              DataOutputStream dos = new DataOutputStream(gzos)) {
@@ -41,10 +47,10 @@ public class PlayWithByteStreamsCompressed {
             e.printStackTrace();
         }
 
+        // Read from file
         try (InputStream is = new FileInputStream(pathName);
              GZIPInputStream gzis = new GZIPInputStream(is);
              DataInputStream dis = new DataInputStream(gzis)) {
-
 
             List<Integer> list = new ArrayList<>();
             try {
@@ -53,6 +59,7 @@ public class PlayWithByteStreamsCompressed {
                 }
             } catch (EOFException ignored) {
             }
+
             System.out.println("Number of ints: " + list.size());
 
         } catch (IOException e) {

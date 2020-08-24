@@ -15,13 +15,17 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
+/**
+ * With ZipOutputStream we can construct a ZIP archive with files and folders in it.
+ * This is not possible with the GZIPOutputStream.
+ */
 public class PlayWithZipFiles {
 
     public static void main(String[] args) {
 
         String fileName = "files/archive.zip";
 
-        // Write files
+        // Write archive
         try(OutputStream os = new FileOutputStream(fileName);
             ZipOutputStream zos = new ZipOutputStream(os);
             DataOutputStream dos = new DataOutputStream(zos)) {
@@ -43,7 +47,7 @@ public class PlayWithZipFiles {
             e.printStackTrace();
         }
 
-        // Read files
+        // Read archive
         try(InputStream is = new FileInputStream(fileName);
             ZipInputStream zis = new ZipInputStream(is);
             DataInputStream dis = new DataInputStream(zis)) {
