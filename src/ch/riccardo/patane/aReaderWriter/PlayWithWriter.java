@@ -33,10 +33,8 @@ public class PlayWithWriter {
         Path path = Paths.get("files/write-file.txt");
 
         try (BufferedWriter bw = Files.newBufferedWriter(path, StandardOpenOption.CREATE, StandardOpenOption.APPEND)) {
-
+            // The PrintWriter does not to be closed because it is bound to the same file as the BufferedWriter.
             PrintWriter pw = new PrintWriter(bw);
-//            pw.println("Hello World!");
-//            pw.printf("%d\r", 12);
 
             Calendar calendar = GregorianCalendar.getInstance();
             calendar.set(1969, Calendar.JULY, 20);
