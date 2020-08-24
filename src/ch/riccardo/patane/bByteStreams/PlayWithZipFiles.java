@@ -1,4 +1,4 @@
-package ch.riccardo.patane.byteStreams;
+package ch.riccardo.patane.bByteStreams;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

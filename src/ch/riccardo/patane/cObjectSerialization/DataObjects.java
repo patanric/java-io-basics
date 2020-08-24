@@ -1,6 +1,6 @@
-package ch.riccardo.patane.objectSerialization;
+package ch.riccardo.patane.cObjectSerialization;
 
-import ch.riccardo.patane.objectSerialization.model.Person;
+import ch.riccardo.patane.cObjectSerialization.model.Person;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

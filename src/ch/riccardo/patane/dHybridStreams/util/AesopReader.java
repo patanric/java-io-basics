@@ -1,6 +1,6 @@
-package ch.riccardo.patane.hybridStreams;
+package ch.riccardo.patane.dHybridStreams.util;
 
-import ch.riccardo.patane.hybridStreams.model.Fable;
+import ch.riccardo.patane.dHybridStreams.model.Fable;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package ch.riccardo.patane.readerWriter;
+package ch.riccardo.patane.aReaderWriter;
 
 import java.io.BufferedWriter;
 import java.io.CharArrayWriter;

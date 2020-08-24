@@ -1,4 +1,4 @@
-package ch.riccardo.patane.hybridStreams.model;
+package ch.riccardo.patane.dHybridStreams.model;
 
 public class Fable {
 

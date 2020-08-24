@@ -1,4 +1,4 @@
-package ch.riccardo.patane.objectSerialization.model;
+package ch.riccardo.patane.cObjectSerialization.model;
 
 import java.io.ObjectStreamException;
 import java.io.Serializable;

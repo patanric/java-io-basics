@@ -1,7 +1,8 @@
-package ch.riccardo.patane.hybridStreams;
+package ch.riccardo.patane.dHybridStreams;
 
-import ch.riccardo.patane.hybridStreams.model.Fable;
-import ch.riccardo.patane.hybridStreams.model.FableData;
+import ch.riccardo.patane.dHybridStreams.model.Fable;
+import ch.riccardo.patane.dHybridStreams.model.FableData;
+import ch.riccardo.patane.dHybridStreams.util.AesopReader;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;

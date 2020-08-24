@@ -1,4 +1,4 @@
-package ch.riccardo.patane.hybridStreams;
+package ch.riccardo.patane.dHybridStreams;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
