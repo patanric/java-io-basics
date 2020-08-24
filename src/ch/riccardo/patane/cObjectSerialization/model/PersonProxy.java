@@ -13,9 +13,9 @@ public class PersonProxy implements Serializable {
 
     /**
      * This readResolve() method is used for deserialization.
-     * The writeReplace() method used for serialization is in the Person class.
+     * The corresponding writeReplace() method used for serialization is in the Person class.
      *
-     * @return
+     * @return the Person class filled with data from the PersonProxy
      * @throws ObjectStreamException
      */
     private Object readResolve() throws ObjectStreamException {

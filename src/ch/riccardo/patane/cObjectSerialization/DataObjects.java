@@ -14,6 +14,10 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class serializes and deserializes data objects. Notice that this class does NOT decide HOW to serialize.
+ * How the serialization is done can be seen in the {@link Person} class.
+ */
 public class DataObjects {
 
     public static void main(String[] args) {
