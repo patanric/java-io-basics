@@ -25,17 +25,16 @@ public class WritingHybridStreams {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         PrintWriter pw = new PrintWriter(baos);
 
-        // write header
-        pw.println("Aesop's Fables");
-        pw.printf("%d\n", fables.size());
+        // Write header with zeroes as placeholder for the offsets and the lengths.
+        writeStaticTopOfHeader(fables, pw);
+        int index = 1;
         for (Fable fable : fables) {
-            pw.printf("%7d %7d %s\n", 0, 0, fable.getTitle());
+            pw.printf("%3d %7d %7d %s\n", index++, 0, 0, fable.getTitle());
         }
-
         pw.flush();
-        pw.close();
-        int textOffset = baos.size();
 
+        // Compress and write the fable texts in the same file as the header.
+        int textOffset = baos.size();
         ByteArrayOutputStream textBaos = new ByteArrayOutputStream();
         List<FableData> fableDataList = new ArrayList<>();
         int offset = textOffset;
@@ -62,13 +61,14 @@ public class WritingHybridStreams {
         baos = new ByteArrayOutputStream();
         pw = new PrintWriter(baos);
 
-        // write header
-        pw.println("Aesop's Fables");
-        pw.printf("%d\n", fables.size());
+        // Replace header placeholder with real data.
+        writeStaticTopOfHeader(fables, pw);
+        index = 1;
         for (FableData fableData : fableDataList) {
-            pw.printf("%7d %7d %s\n", fableData.getOffset(), fableData.getLength(), fableData.getFable().getTitle());
+            pw.printf("%3d %7d %7d %s\n", index++, fableData.getOffset(), fableData.getLength(), fableData.getFable().getTitle());
         }
         pw.flush();
+        pw.close();
 
         baos.write(textBaos.toByteArray());
         baos.close();
@@ -78,8 +78,13 @@ public class WritingHybridStreams {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
 
-        pw.close();
+    private static void writeStaticTopOfHeader(List<Fable> fables, PrintWriter pw) {
+        pw.println("Aesop's Fables");
+        pw.printf("Number of fables: %d\n", fables.size());
+        pw.println("---------------------");
+        pw.printf("%3s %7s %7s %s\n", "#", "Offset", "Length", "Title");
     }
 
 }

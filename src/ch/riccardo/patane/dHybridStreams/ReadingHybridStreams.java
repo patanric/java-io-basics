@@ -13,10 +13,13 @@ import java.util.zip.GZIPInputStream;
 
 public class ReadingHybridStreams {
 
+    /**
+     * Run {@link WritingHybridStreams} before running this method.
+     */
     public static void main(String[] args) throws IOException {
 
-        int fableNumber = 291;
-        int fableNumberOffset = 1;
+        int fableNumber = 255;
+        int fableNumberOffset = 3;
 
         String fileName = "files/aesop-compressed.bin";
         int fileSize = (int) Files.size(Paths.get(fileName));
@@ -34,14 +37,15 @@ public class ReadingHybridStreams {
             }
 
             String fableLine = lnr.readLine();
-            System.out.println(fableLine);
-
-            int offset = Integer.parseInt(fableLine.substring(0, 7).trim());
-            int length = Integer.parseInt(fableLine.substring(7, 15).trim());
-            String title = fableLine.substring(15).trim();
+            int number = Integer.parseInt(fableLine.substring(0, 3).trim());
+            int offset = Integer.parseInt(fableLine.substring(3, 11).trim());
+            int length = Integer.parseInt(fableLine.substring(11, 19).trim());
+            String title = fableLine.substring(19).trim();
+            System.out.printf("%d %s\n", number, title);
 
             bis.reset();
 
+            // Fast forward to the right byte in the file:
             int totalSkipped = (int) bis.skip(offset);
             while (totalSkipped < offset) {
                 totalSkipped += (int) bis.skip(offset - totalSkipped);
@@ -57,7 +61,6 @@ public class ReadingHybridStreams {
             gzis.read(bytes2);
             String text = new String(bytes2);
             System.out.println(text);
-
 
         } catch (IOException e) {
             e.printStackTrace();
