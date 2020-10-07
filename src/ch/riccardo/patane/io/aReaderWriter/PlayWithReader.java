@@ -1,4 +1,4 @@
-package ch.riccardo.patane.aReaderWriter;
+package ch.riccardo.patane.io.aReaderWriter;
 
 import java.io.BufferedReader;
 import java.io.CharArrayReader;
@@ -29,7 +29,7 @@ public class PlayWithReader {
         PushbackReader pushbackReader = null;
 
 
-        String file = "files/antcrick.txt";
+        String file = "files/io/antcrick.txt";
 
         try (Stream<String> lines = Files.newBufferedReader(Paths.get(file)).lines()) {
 

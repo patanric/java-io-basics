@@ -1,8 +1,8 @@
-package ch.riccardo.patane.dHybridStreams;
+package ch.riccardo.patane.io.dHybridStreams;
 
-import ch.riccardo.patane.dHybridStreams.model.Fable;
-import ch.riccardo.patane.dHybridStreams.model.FableData;
-import ch.riccardo.patane.dHybridStreams.util.AesopReader;
+import ch.riccardo.patane.io.dHybridStreams.model.Fable;
+import ch.riccardo.patane.io.dHybridStreams.model.FableData;
+import ch.riccardo.patane.io.dHybridStreams.util.AesopReader;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
@@ -13,12 +13,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.GZIPOutputStream;
 
+/**
+ * Hybrid refers to the mix of byte stream and character streams.
+ */
 public class WritingHybridStreams {
 
     public static void main(String[] args) throws IOException {
 
         AesopReader aesopReader = new AesopReader();
-        List<Fable> fables = aesopReader.readFable("files/aesop.txt");
+        List<Fable> fables = aesopReader.readFable("files/io/aesop.txt");
 
         System.out.println("# of fables: " + fables.size());
 
@@ -73,7 +76,7 @@ public class WritingHybridStreams {
         baos.write(textBaos.toByteArray());
         baos.close();
 
-        try (OutputStream os = new FileOutputStream("files/aesop-compressed.bin")) {
+        try (OutputStream os = new FileOutputStream("files/io/aesop-compressed.bin")) {
             os.write(baos.toByteArray());
         } catch (IOException e) {
             e.printStackTrace();

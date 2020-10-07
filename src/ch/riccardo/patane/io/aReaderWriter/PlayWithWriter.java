@@ -1,4 +1,4 @@
-package ch.riccardo.patane.aReaderWriter;
+package ch.riccardo.patane.io.aReaderWriter;
 
 import java.io.BufferedWriter;
 import java.io.CharArrayWriter;
@@ -30,7 +30,7 @@ public class PlayWithWriter {
         PrintWriter printWriter = null;
 
 
-        Path path = Paths.get("files/write-file.txt");
+        Path path = Paths.get("files/io/write-file.txt");
 
         try (BufferedWriter bw = Files.newBufferedWriter(path, StandardOpenOption.CREATE, StandardOpenOption.APPEND)) {
             // The PrintWriter does not to be closed because it is bound to the same file as the BufferedWriter.

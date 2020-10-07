@@ -1,4 +1,4 @@
-package ch.riccardo.patane.bByteStreams;
+package ch.riccardo.patane.io.bByteStreams;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -23,7 +23,7 @@ public class PlayWithZipFiles {
 
     public static void main(String[] args) {
 
-        String fileName = "files/archive.zip";
+        String fileName = "files/io/archive.zip";
 
         // Write archive
         try(OutputStream os = new FileOutputStream(fileName);

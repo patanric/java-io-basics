@@ -2,9 +2,11 @@
 /java-io-basics.iml
 /out/
 
-/files/archive.zip
-/files/ints.bin
-/files/ints.bin.gz
-/files/person.bin
-/files/write-file.txt
-/files/aesop-compressed.bin
+/files/io/archive.zip
+/files/io/ints.bin
+/files/io/ints.bin.gz
+/files/io/person.bin
+/files/io/write-file.txt
+/files/io/aesop-compressed.bin
+/files/nio/ints.bin
+/files/nio/utf8.bin

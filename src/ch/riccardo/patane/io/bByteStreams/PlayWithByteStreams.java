@@ -1,4 +1,4 @@
-package ch.riccardo.patane.bByteStreams;
+package ch.riccardo.patane.io.bByteStreams;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -59,7 +59,7 @@ public class PlayWithByteStreams {
 
     public static void main(String[] args) {
 
-        String pathName = "files/ints.bin";
+        String pathName = "files/io/ints.bin";
 
         // Write to bin file:
         try (OutputStream os = new FileOutputStream(pathName);

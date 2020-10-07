@@ -1,6 +1,6 @@
-package ch.riccardo.patane.cObjectSerialization;
+package ch.riccardo.patane.io.cObjectSerialization;
 
-import ch.riccardo.patane.cObjectSerialization.model.Person;
+import ch.riccardo.patane.io.cObjectSerialization.model.Person;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -22,7 +22,7 @@ public class DataObjects {
 
     public static void main(String[] args) {
 
-        String fileName = "files/person.bin";
+        String fileName = "files/io/person.bin";
 
         Person p1 = new Person("Nalleli", 41, "ign F1");
         Person p2 = new Person("Maria Luisa", 62, "ign F2");

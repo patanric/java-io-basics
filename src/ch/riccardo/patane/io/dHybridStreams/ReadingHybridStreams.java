@@ -1,4 +1,4 @@
-package ch.riccardo.patane.dHybridStreams;
+package ch.riccardo.patane.io.dHybridStreams;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
@@ -21,7 +21,7 @@ public class ReadingHybridStreams {
         int fableNumber = 255;
         int fableNumberOffset = 3;
 
-        String fileName = "files/aesop-compressed.bin";
+        String fileName = "files/io/aesop-compressed.bin";
         int fileSize = (int) Files.size(Paths.get(fileName));
 
         try (InputStream is = new FileInputStream(fileName);

@@ -1,4 +1,4 @@
-package ch.riccardo.patane.bByteStreams;
+package ch.riccardo.patane.io.bByteStreams;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -25,7 +25,7 @@ public class PlayWithByteStreamsCompressed {
 
     public static void main(String[] args) {
 
-        String pathName = "files/ints.bin.gz";
+        String pathName = "files/io/ints.bin.gz";
 
         // Write to file:
         try (OutputStream os = new FileOutputStream(pathName);

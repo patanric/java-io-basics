@@ -1,4 +1,4 @@
-package ch.riccardo.patane.eSocketCommunication;
+package ch.riccardo.patane.io.eSocketCommunication;
 
 import java.io.IOException;
 import java.io.InputStream;

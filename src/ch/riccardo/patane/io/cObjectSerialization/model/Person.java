@@ -1,4 +1,4 @@
-package ch.riccardo.patane.cObjectSerialization.model;
+package ch.riccardo.patane.io.cObjectSerialization.model;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
